@@ -1,0 +1,100 @@
+﻿@model IEnumerable<eConFix.Models.Services>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout1.cshtml";
+    <link href="~/Content/Services/Index.css" rel="stylesheet" />
+    <script src="~/Content/Services/Index.js"></script>
+}
+
+<style>
+    body {
+     
+        
+        background-position: inherit;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+</style>
+<div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse" title="more options">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            @Html.ActionLink("eConFix", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                <li>@Html.ActionLink("About", "About", "Home")</li>
+                <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+            </ul>
+        </div>
+    </div>
+</div>
+<h2>Administration page</h2>
+@*<div>
+    <ul>
+        <li>@Html.ActionLink("Link", "")</li>
+        <li>@Html.ActionLink("Link", "")</li>
+        <li>@Html.ActionLink("Link", "")</li>
+    </ul>
+</div>*@
+
+
+<div class="row">
+    <div class="col-md-6">
+
+        <h2>Offered services</h2>
+        <div>
+            <p>
+                @Html.ActionLink("Add new service", "Create")
+            </p>
+            <table class="table">
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.serviceName)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.servicePrice)
+                    </th>
+                    <th>Actions</th>
+                </tr>
+
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.serviceName)
+                        </td>
+                        <td>
+                            R @Html.DisplayFor(modelItem => item.servicePrice)
+                        </td>
+                        <td>
+                            @Html.ActionLink("Edit", "Edit", new { id = item.serviceId }) |
+                            @Html.ActionLink("Delete", "Delete", new { id = item.serviceId })
+                        </td>
+                    </tr>
+                }
+
+            </table>
+        </div>
+    </div>
+    <!--Admins list-->
+    <div class="col-md-6">
+        @Html.Action("_Admins")
+    </div>
+</div>
+
+<div>
+    <div class="col-lg-6">
+        <!--Bookings list-->
+        @Html.Action("_Bookings")
+    </div>
+    <div class="col-lg-6">
+        @Html.Action("_Registered")
+    </div>
+</div>

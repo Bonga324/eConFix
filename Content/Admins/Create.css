@@ -1,0 +1,8 @@
+﻿body {
+    background-color: #00238559;
+}
+
+.btn-default:hover {
+    background-color: #16c714cc;
+    color: azure;
+}

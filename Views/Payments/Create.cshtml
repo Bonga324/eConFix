@@ -1,0 +1,48 @@
+﻿@model eConFix.Models.Payments
+
+@{
+    ViewBag.Title = "Create";
+    <link href="~/Content/Payments/Create.css" rel="stylesheet" />
+    <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+    <script src="~/Content/Payments/Payments.js"></script>
+
+}
+<style>
+    body {
+        background-image: url('../../Images/P4.jpg');
+        background-position: inherit;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+</style>
+<div class="checkout">
+    <h1>Payment info</h1>
+    <!--Error feedback-->
+    @if (ViewBag.errors != null)
+    {
+        <p class="alert-danger" style="padding:5px;border-radius:5px">
+            @foreach (var item in ViewBag.errors)
+            {
+                <span>* @item</span><br />
+            }
+        </p>
+    }
+    <!--Form begin-->
+    @using (Html.BeginForm())
+    {
+        <input placeholder="Card number" name="cardNumber" type="text" minlength="16" maxlength="16" required />
+        <input placeholder="Name on card" type="text" name="name" required />
+        <div class="half">
+            <input id="1" placeholder="MM" name="mm" type="text" minlength="2" maxlength="2" required />
+            <input id="2" placeholder="YY" name="yy" type="text" minlength="2" maxlength="2" required />
+            <input id="3" placeholder="CVC" name="cvc" type="text" minlength="3" maxlength="3" required />
+        </div>
+        <div hidden>
+            <input id="expiry" type="text" name="expiry" value="" />
+        </div>
+        <button type="submit">Finish</button>
+    }
+</div>
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

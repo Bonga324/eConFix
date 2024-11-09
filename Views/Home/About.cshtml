@@ -1,0 +1,122 @@
+﻿{@{
+        ViewBag.Title = "The eConFix" ;
+}
+<h2>@ViewBag.Title</h2>
+<h3>@ViewBag.Message</h3>
+
+<!-- Styling for the About Us Page -->
+<style>
+    body {
+       
+        background-image: url('../../Images/Anotherblue.jpg');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        margin: 0;
+        padding: 0;
+        color: #fff;
+    }
+
+    h2, h3 {
+        text-align: center;
+        font-size: 2.5em;
+        margin-top: 30px;
+        color: #fff;
+    }
+
+    h3 {
+        font-size: 1.5em;
+        margin-top: 10px;
+        margin-bottom: 40px;
+        color: #ddd;
+    }
+
+    .about-container {
+        background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent dark background */
+        padding: 40px;
+        margin: 40px auto;
+        border-radius: 12px;
+        max-width: 900px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.7);
+    }
+
+        .about-container p {
+            font-size: 1.2em;
+            line-height: 1.8em;
+            margin-bottom: 30px;
+            color: #f1f1f1;
+        }
+
+        .about-container ul {
+            list-style: none;
+            padding-left: 0;
+            font-size: 1.1em;
+            line-height: 1.8em;
+            color: #ddd;
+        }
+
+        .about-container li {
+            padding-left: 20px;
+            position: relative;
+        }
+
+            .about-container li::before {
+                content: '✔'; /* Using check mark bullet points */
+                position: absolute;
+                left: 0;
+                top: 0;
+                color: #00aaff;
+                font-size: 1.4em;
+            }
+
+        .about-container h2 {
+            font-size: 2.2em;
+            margin-top: 40px;
+            color: #fff;
+            text-align: center;
+        }
+
+        .about-container ul li:last-child {
+            margin-bottom: 0;
+        }
+</style>
+
+<!-- About Us Content Section -->
+<div class="about-container">
+    <p>
+        eConFix is an online platform that offers a wide range of construction and maintenance services.
+        Through our website, users can easily book the required service and make secure payments online. Once the service is booked, our skilled team will visit the customer's site to deliver the services requested.
+    </p>
+
+    <ul>
+        <li>Construction industry delivery capability for South Africa’s social and economic growth</li>
+        <li>A proudly South African construction industry that delivers to globally competitive standards</li>
+    </ul>
+
+    <h2>As the cidb, we focus on:</h2>
+
+    <ul>
+        <li>Sustainable growth, capacity development, and empowerment</li>
+        <li>Improved industry performance and best practices</li>
+        <li>A transformed industry, underpinned by consistent and ethical procurement practices</li>
+        <li>Enhanced value to clients and society</li>
+    </ul>
+</div>
+
+@*<h3>What is Lorem Ipsum?</h3>
+    <p>
+        Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+        Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+        when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries,
+        but also the leap into electronic typesetting, remaining essentially unchanged.
+        It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages,
+        and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+    </p>
+    <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+        Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    </p>*@

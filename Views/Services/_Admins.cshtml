@@ -1,0 +1,35 @@
+﻿@model IEnumerable<eConFix.Models.Admin>
+
+<h2>Admins</h2>
+<p>
+    @Html.ActionLink("Add New", "Create","Admins")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.userName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.password)
+        </th>
+        <th>Actions</th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.userName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.password)
+        </td>
+        <td>
+            @if (item.userName != "admin")
+            {
+                @Html.ActionLink("Delete Admin", "DeleteAdmin", new { userName = item.userName })
+            }
+        </td>
+    </tr>
+}
+
+</table>

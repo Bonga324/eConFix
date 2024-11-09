@@ -1,0 +1,50 @@
+﻿body {
+    background: linear-gradient(135deg, rgba(30,29,31,1) 0%, #00000013 100%);
+    background-size:auto;
+    background-position:center;
+}
+
+h1 {
+    color: #121213cc;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+form {
+    width: 350px;
+    margin: 0 auto;
+}
+
+    form .half input {
+        width: 165px;
+        float: left;
+    }
+
+        form .half input:first-child {
+            margin-right: 20px;
+        }
+
+    form input, form button {
+        box-sizing: border-box;
+        display: block;
+        float: left;
+        width: 100%;
+        padding: 20px;
+        font-size: 1.3em;
+        margin-bottom: 20px;
+        outline: none;
+        border: none;
+    }
+
+    form input {
+        color: #1C1D21;
+    }
+
+    form button {
+        color: #1C1D21;
+        background: #EEEFF7;
+        font-weight: bold;
+    }
+        form button:hover {
+            background-color: #318f53;
+        }

@@ -1,0 +1,36 @@
+﻿@model IEnumerable<eConFix.Models.Booking>
+
+<h2>Bookings</h2>
+
+<table class="table" style="background-image: linear-gradient(45deg, #42687e59, #6d9dc733);padding:5px">
+    <tr>
+        <th>
+            Customer name
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.service)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.price)
+        </th>
+        <th>Actions</th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Register.name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.service)
+        </td>
+        <td>
+            R @Html.DisplayFor(modelItem => item.price)
+        </td>
+        <td>
+            @Html.ActionLink("Delete", "DeleteBooking", new { id=item.bookingId })
+        </td>
+    </tr>
+}
+
+</table>

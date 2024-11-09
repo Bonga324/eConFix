@@ -1,0 +1,68 @@
+﻿@model eConFix.Models.CustomerLogin
+
+@{
+    ViewBag.Title = "Login";
+    <link href="~/Content/Registers/Login.css" rel="stylesheet" />
+    <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+    <script src="~/Content/Registers/Registers.js"></script>
+    <script src="~/Content/Registers/Login.js"></script>
+}
+<style>
+    body {
+        background-image: url('../../Images/Construction.jpg');
+        background-image: background-image: background-position: inherit;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+</style>
+@using (Html.BeginForm())
+{ 
+
+    <div class='box'>
+        <div class='box-form'>
+            <div class='box-login-tab'></div>
+            <div class='box-login-title'>
+                <div class='i i-login'></div><h2>LOGIN</h2>
+            </div>
+            <div class='box-login'>
+                @if (ViewBag.feedback != null)
+                {
+                <p class="alert-danger">@ViewBag.feedback</p>
+                }
+                <div class='fieldset-body' id='login_form'>
+                    <a onclick="openLoginInfo();" class='b b-form i i-more' title='Mais Informações'></a>
+                    <p class='field'>
+                        <label for='user'>E-MAIL</label>
+                        <input type='text' id='user' name='emailAddress' title='Username' required />
+                        <span id='valida' class='i i-warning'></span>
+                    </p>
+                    <p class='field'>
+                        <label for='pass'>PASSWORD</label>
+                        <input type='password' id='pass' name='password' title='Password' required />
+                        <span id='valida' class='i i-close'></span>
+                    </p>
+
+                    <label class='checkbox'>
+                        <input type='checkbox' name="saveInfo" value='TRUE' title='Keep me Signed in' /> Keep me Signed in
+                    </label>
+
+                    <input type='submit' id='do_login' value='LOGIN' @*title='Get Started'*@ />
+                </div>
+            </div>
+        </div>
+        <div class='box-info'>
+            <p>
+                <a onclick="closeLoginInfo();" class='b b-info i i-left' title='Back to Sign In'></a><h3>Need Help?</h3>
+            </p>
+            <div class='line-wh'></div>
+            <a onclick="" class='b-support' title='Forgot Password?'> Forgot Password?</a>
+            <a onclick="" class='b-support' title='Contact Support'> Contact Support</a>
+            <div class='line-wh'></div>
+            <a id="b-cta" class="btn btn-default" href="@Url.Action("Create","Registers")" title='Sign up now!'>CREATE ACCOUNT &raquo;</a>
+        </div>
+    </div>
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

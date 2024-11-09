@@ -1,0 +1,109 @@
+﻿@{
+    ViewBag.Title = "Home";
+    <script>var user=@ViewBag.userCookie</script>
+    <link href="~/Content/Home/Index.css" rel="stylesheet" />
+    <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+    <script src="~/Content/Home/Index.js"></script>
+}
+<style>
+    body {
+        background-image: url('../../Images/Contruct.jpg');
+        background-image: background-position:inherit;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+</style>
+<div class="jumbotron">
+    <h1 style="color: #48000c85 ">eConFix</h1>
+    <p class="lead">eConFix At Your Service!</p>
+    @*<p>
+            Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+            Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+            It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
+            It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages,
+            and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+        </p>*@
+    <p><a style="background-color: #4c002778" href="@Url.Action("Login","Registers")" class="btn btn-primary btn-lg">Book now &raquo;</a></p>
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <h2><b>Sign up</b></h2>
+        <p>
+            @*@ ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
+                enables a clean separation of concerns and gives you full control over markup*@
+        </p>
+        <p><a class="btn btn-default"  href="@Url.Action("Create","Registers")"><b>Sign up</b> &raquo;</a></p>
+    </div>
+    <div class="col-md-4">
+        <h2><b>Customer bookings</b></h2>
+        <p>@*NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.*@</p>
+        <p><a class="btn btn-default" href="@Url.Action("Index","Bookings")"><b>Bookings list &raquo;</b></a></p>
+    </div>
+    <div class="col-md-4">
+        <h2><b>Admins</b></h2>
+        <p>@*You can easily find a web hosting company that offers the right mix of features and price for your applications.*@</p>
+        <p><a class="btn btn-default" href="@Url.Action("Login","Admins")"><b>Admins &raquo;</b></a></p>
+    </div>
+</div>
+
+<!--2nd rows-->
+<div class="row">
+    <div class="col-md-4">
+        @*@<h2>Getting started</h2>
+                <p>
+                    ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
+                    enables a clean separation of concerns and gives you full control over markup
+                </p>
+                <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
+            </div>
+            <div class="col-md-4">
+                <h2>Get more libraries</h2>
+                <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
+                <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
+            </div>
+            <div class="col-md-4">
+                <h2>Web Hosting</h2>
+                <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
+                <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>*@
+    </div>
+</div>
+
+<!--Web footer-->
+@*<div class="row" style="margin-top: 30px; background-color: #333333; color:darkgrey; position: sticky;border-radius:5px;">
+    <br /><br /><br /><br /><br />
+    <div class="col-sm-3">
+                <h3>Get started</h3>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="@Url.Action("Create","Registers")">Sign up</a></li>
+                    <li><a href="@Url.Action("Login","Admins")">Admins</a></li>
+                </ul>
+            </div>
+
+            <div class="col-sm-3">
+                <h3>About us</h3>
+                <ul>
+                    <li><a href="@Url.Action("About","Home")">Company Information</a></li>
+                    <li><a href="@Url.Action("Contact","Home")">Contact us</a></li>
+                    <li><a href="#">Reviews</a></li>
+                </ul>
+            </div>
+
+            <div class="col-sm-3">
+                <h3>Support</h3>
+                <ul>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">Help desk</a></li>
+                    <li><a href="#">Forums</a></li>
+                </ul>
+            </div>
+            <div class="col-sm-3 info">
+                <h3>Support</h3>
+                <ul>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">Help desk</a></li>
+                    <li><a href="#">Forums</a></li>
+                </ul>
+            </div>
+        </div>*@

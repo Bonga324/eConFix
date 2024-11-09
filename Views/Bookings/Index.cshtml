@@ -1,0 +1,75 @@
+﻿@model IEnumerable<eConFix.Models.Booking>
+
+@{
+    ViewBag.Title = "Index";
+    <link href="~/Content/Booking/IndexList.css" rel="stylesheet" />
+    <script defer src="~/Content/Booking/Booking.js"></script>
+}
+<style>
+    body {
+        
+        background-image: url('../../Images/admin.jpg');
+        background-position: inherit;
+        background-repeat: no-repeat;
+        background-size: cover;
+        color: black;
+    }
+    table{
+        background-color:cadetblue;
+        color:black;
+    }
+</style>
+<h2>Customer bookings</h2>
+
+@if (ViewBag.error != null)
+{
+    <div class="alert-danger" id="feedback">
+        <span>@ViewBag.error</span>
+    </div>
+}
+
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            ServiceID
+        </th>
+        <th>
+            Customer name
+        </th>
+        <th>
+            Service name
+        </th>
+        <th>
+            Price
+        </th>
+        <th>
+            Actions
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.bookingId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.emailAddress)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.service)
+            </td>
+            <td>
+                R @Html.DisplayFor(modelItem => item.price)
+            </td>
+            <td>
+                | @*@Html.ActionLink("Details", "Details", new { id = item.bookingId })*@ |
+            </td>
+        </tr>
+    }
+
+</table>

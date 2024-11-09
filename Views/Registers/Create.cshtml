@@ -1,0 +1,68 @@
+﻿@model eConFix.Models.Register
+
+@{
+    ViewBag.Title = "Create";
+    <link href="~/Content/Registers/Login.css" rel="stylesheet" />
+    <script src="~/Content/Registers/Registers.js"></script>
+}
+<style>
+    body {
+        background-image: url(/Images/IMG-20221012-WA0002.jpg);
+        background-position: inherit;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+</style>
+
+@using (Html.BeginForm())
+{
+
+    <div class='box'>
+        <div class='box-form'>
+            <div class='box-login-tab'></div>
+            <div class='box-login-title'>
+                <div class='i i-login'></div><h2>SIGN UP</h2>
+            </div>
+            <div class='box-login'>
+                @if (ViewBag.feedback != null)
+                {
+                    <p class="alert-danger">@ViewBag.feedback</p>
+                }
+            <div class='fieldset-body' id='login_form'>
+                <p class='field'>
+                    <label for='user'>Name</label>
+                    <input type='text' id='user' name='name' title='Name' required />
+                    <span id='valida' class='i i-warning'></span>
+                </p>
+                <p class='field'>
+                    <label for='pass'>Surname</label>
+                    <input type='text' id='pass' name='surname' title='Surname' required />
+                    <span id='valida' class='i i-close'></span>
+                </p>
+                <p class='field'>
+                    <label for='pass'>Email address</label>
+                    <input type='email' id='pass' name='emailAddress' title='Email address' required />
+                    <span id='valida' class='i i-close'></span>
+                </p>
+                <p class='field'>
+                    <label for='user'>Password</label>
+                    <input type='password' id='user' name='password' title='Password' required />
+                    <span id='valida' class='i i-warning'></span>
+                </p>
+                <p class='field'>
+                    <label for='pass'>Confirm password</label>
+                    <input type='password' id='pass' name='confirmPassword' title='Confirm password' required />
+                    <span id='valida' class='i i-close'></span>
+                </p>
+
+                <input type='submit' id='do_login' value='REGISTER' @*title='Get Started'*@ />
+            </div>
+            </div>
+        </div>
+    </div>
+}
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

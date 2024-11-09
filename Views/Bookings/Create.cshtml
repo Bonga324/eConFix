@@ -1,0 +1,69 @@
+﻿@{
+    ViewBag.Title = "Create";
+    <link href="~/Content/Registers/Login.css" rel="stylesheet" />
+    <link href="~/Content/Booking/Create.css" rel="stylesheet" />
+    <script defer src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+    <script defer src="~/Content/Booking/Booking.js"></script>
+
+}
+
+<style>
+    body {
+        
+        background-image: url('../../Images/admin.jpg');
+        background-position: inherit;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+</style>
+
+<!--List of price from the database-->
+<div hidden>
+    @Html.DropDownList("servicePrice", (IEnumerable<SelectListItem>)ViewBag.servicePrice, null, new { @class = "form-control", @id = "servicePrice" })
+</div>
+
+
+@using (Html.BeginForm("Create","Bookings"))
+{
+    <div class='box'>
+        <div class='box-form'>
+            <div class='box-login-tab'></div>
+            <div id="listLink">
+                @Html.ActionLink("Back to list", "Index", new { @id="listLink"} )
+            </div>
+            <div class='box-login-title'>
+                <h2>BOOKING</h2>
+            </div>
+            <div class='box-login'>
+                @if (ViewBag.feedback != null)
+                {
+                    <p class="alert-danger">@ViewBag.feedback</p>
+                }
+                <div class='fieldset-body' id='login_form'>
+                    <p class='field'>
+                        <label for='price'>Price</label>Rands
+                        <input type="text" id="price" name="price" title='Price' readonly />
+                        <span id='valida' class='i i-close'></span>
+                    </p>
+
+                    <p class='field' id="dropdown">
+                        <label for='pass'>Service</label>
+                        @Html.DropDownList("serviceId", (IEnumerable<SelectListItem>)ViewBag.serviceId, "-select service-", new { @class = "form-control", @id = "serviceId" })
+                        <span id='valida' class='i i-close'></span>
+                    </p>
+
+                    <p class='field'>
+                        <label for='emailAddress'>User email</label>
+                        <input type='text' id='emailAddress' name='emailAddress' title='Email address' value="@ViewBag.emailAddress" readonly />
+                        <span id='valida' class='i i-warning'></span>
+                    </p>
+
+                    <input type='submit' id='do_login' value='ADD' title='Book now' />
+                </div>
+            </div>
+        </div>
+    </div>
+}
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
